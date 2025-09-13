@@ -1,0 +1,8 @@
+<h1>{{ post.title }}</h1>
+<p>By {{ post.author.username }} on {{ post.created_at|date:"F d, Y" }}</p>
+<hr>
+<div>
+    {{ post.body|linebreaks }}
+</div>
+<hr>
+<a href="{% url 'blog:list' %}">Back to all posts</a>
