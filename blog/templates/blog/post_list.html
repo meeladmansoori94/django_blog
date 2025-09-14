@@ -1,9 +1,10 @@
-<h1>All Posts</h1>
-{% for post in posts %}
-    <article>
-        <h2><a href="{% url 'blog:detail' slug=post.slug %}">{{ post.title }}</a></h2>
-        <p>By {{ post.author.username }} on {{ post.created_at|date:"F d, Y" }}</p>
-    </article>
-{% empty %}
-    <p>No posts found.</p>
-{% endfor %}
+{% extends 'base.html' %} {% block content %} <h1>All Posts</h1>
+    {% for post in posts %}
+        <article>
+            <h2><a href="{% url 'blog:detail' slug=post.slug %}">{{ post.title }}</a></h2>
+            <p>By {{ post.author.username }} on {{ post.created_at|date:"F d, Y" }}</p>
+        </article>
+    {% empty %}
+        <p>No posts found.</p>
+    {% endfor %}
+{% endblock content %}
