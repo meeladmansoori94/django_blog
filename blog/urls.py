@@ -9,4 +9,6 @@ urlpatterns = [
     # Example: website.com/blog/my-first-post/
     # We use <slug:slug> to capture the slug from the URL
     path("<slug:slug>/", views.PostDetailView.as_view(), name="detail"),
+    # URL for creating posts
+    path("new/", views.PostCreateView.as_view(), name="create"),
 ]
